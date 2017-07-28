@@ -53,7 +53,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'smart.urls'
 
 ADMINS = (
-    ('Admin', 'menstenebris@gmail.com'),
+    ('admin', 'admin@tehnokom.su'),
+    ('pinballwizard', 'pinballwizard@tehnokom.su'),
 )
 
 TEMPLATES = [
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
