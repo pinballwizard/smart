@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from main.models import Device
+from main.models import ModbusDevice, MQTTDevice
 
 
 def device_list(request):
-    devices = Device.objects.all()
+    devices = ModbusDevice.objects.all()
     data = {
         'devices': devices,
     }

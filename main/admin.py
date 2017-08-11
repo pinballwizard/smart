@@ -7,6 +7,11 @@ AdminSite.site_header = 'Управление умным домом'
 AdminSite.site_title = 'Умный дом'
 
 
-@admin.register(Device)
-class DeviceAdmin(admin.ModelAdmin):
+@admin.register(ModbusDevice)
+class ModbusAdmin(admin.ModelAdmin):
+    ordering = ['name']
+
+
+@admin.register(MQTTDevice)
+class MQTTAdmin(admin.ModelAdmin):
     ordering = ['name']
