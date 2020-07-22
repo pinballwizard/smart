@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('device_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='main.Device')),
                 ('mqtt_type', models.CharField(choices=[('mqtt', 'MQTT'), ('mqtt-sn', 'MQTT-SN')], default='mqtt', max_length=10, verbose_name='Видпротокола')),
-                ('role', models.CharField(choices=[('publisher', 'Publisher'), ('consumer', 'Consumer')], default='slave', max_length=10, verbose_name='Роль устройства')),
+                ('role', models.CharField(choices=[('publisher', 'Publisher'), ('consumer', 'Consumer')], default='subordinate', max_length=10, verbose_name='Роль устройства')),
             ],
             options={
                 'verbose_name': 'Устройство MQTT',
