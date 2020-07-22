@@ -14,8 +14,8 @@ class Device(models.Model):
 
 class ModbusDevice(Device):
     role_choices = (
-        ('master', 'master'),
-        ('slave', 'slave'),
+        ('main', 'main'),
+        ('subordinate', 'subordinate'),
     )
     data_type_choices = (
         ('coils', 'Coils'),
@@ -29,7 +29,7 @@ class ModbusDevice(Device):
         ('rtu', 'RTU'),
     )
     modbus_type = models.CharField("Вид протокола", max_length=10, choices=modbus_type_choices, default='tcp')
-    role = models.CharField("Роль устройства", max_length=10, choices=role_choices, default='slave')
+    role = models.CharField("Роль устройства", max_length=10, choices=role_choices, default='subordinate')
     data_type = models.CharField("Тип данных", max_length=20, choices=data_type_choices, default='coils')
     
     class Meta:
@@ -50,7 +50,7 @@ class MQTTDevice(Device):
         ('consumer', 'Consumer'),
     )
     mqtt_type = models.CharField("Видпротокола",max_length=10, choices=mqtt_type_choices, default='mqtt')
-    role = models.CharField("Роль устройства", max_length=10, choices=role_choices, default='slave')
+    role = models.CharField("Роль устройства", max_length=10, choices=role_choices, default='subordinate')
 
     class Meta:
         verbose_name = "Устройство MQTT"

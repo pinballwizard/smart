@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Modbus',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('role', models.CharField(choices=[('master', 'master'), ('slave', 'slave')], default='slave', max_length=10, verbose_name='Роль устройства')),
+                ('role', models.CharField(choices=[('main', 'main'), ('subordinate', 'subordinate')], default='subordinate', max_length=10, verbose_name='Роль устройства')),
                 ('data_type', models.CharField(choices=[('coils', 'Coils'), ('discrete_inputs', 'Discrete Inputs'), ('input_registers', 'Input Registers'), ('holding_registers', 'Holding Registers')], default='Coils', max_length=20, verbose_name='Тип данных')),
             ],
             options={
